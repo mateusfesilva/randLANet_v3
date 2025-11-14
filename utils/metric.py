@@ -24,7 +24,7 @@ class IoUCalculator:
         # Ignora o rótulo 255 (ou qualquer outro definido na config, se houver)
         # A função de perda já usa 'ignore_index', mas para as métricas, filtramos aqui.
         # O ideal é ter a config acessível, mas vamos usar 255 como padrão de ignorar.
-        ignore_idx = 255
+        ignore_idx = 0
         valid_mask = (labels_np != ignore_idx)
 
         labels_filtered = labels_np[valid_mask]
