@@ -2,6 +2,7 @@ import torch
 
 def compute_loss(end_points, d_set, criterion):
     logits = end_points['logits']  # Shape: [Batch, NumClasses, NumPoints]
+    logits = logits-logits[:, 1:, :]
     labels = end_points['labels']  # Shape: [Batch, NumPoints]
 
     # A função criterion, com ignore_index=255, já ignora os rótulos corretos
