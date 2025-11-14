@@ -5,7 +5,7 @@ class ConfigSemanticKITTI:
     k_n = 16  # KNN
     num_layers = 4  # Number of layers
     num_points = 4096 * 11  # Number of input points
-    num_classes = 3  # Number of valid classes
+    num_classes = 4  # Number of valid classes
     sub_grid_size = 0.06  # preprocess_parameter
     num_features = 4  # Number of input features (x, y, z, intensity)
 
@@ -26,16 +26,7 @@ class ConfigSemanticKITTI:
     train_sum_dir = 'train_log'
     saving = True
     saving_path = None
-    
-    def __init__(self, dataset_path=None):
-
-        # Se um caminho for fornecido ao criar o objeto, use-o.
-        if dataset_path:
-            self.dataset_path = Path(dataset_path)
-        else:
-            # Se nenhum caminho for fornecido, define um padrão ou lança um erro
-            self.dataset_path = None
-            print("AVISO: Nenhum 'dataset_path' fornecido na criação da configuração.")
+    dataset_path = Path(os.getenv('DATASET_PATH', './'))
 
 
 class ConfigS3DIS:
