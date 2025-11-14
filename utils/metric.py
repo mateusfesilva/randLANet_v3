@@ -32,7 +32,7 @@ class IoUCalculator:
         # ---------------------------
 
         # Atualiza a matriz de confusão apenas com os dados válidos
-        conf_matrix = confusion_matrix(labels_filtered, preds_filtered, labels=np.arange(0, self.cfg.num_classes, 1))
+        conf_matrix = confusion_matrix(labels_filtered, preds_filtered, labels=np.arange(0, (self.cfg.num_classes - 1), 1))
 
         self.gt_classes += np.sum(conf_matrix, axis=1)
         self.positive_classes += np.sum(conf_matrix, axis=0)
