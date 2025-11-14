@@ -1,11 +1,9 @@
 import numpy as np
 from pathlib import Path
 from tqdm import tqdm
+import argparse
 
 # --- 1. CONFIGURE AS VARIÁVEIS ABAIXO ---
-
-# O caminho para a pasta raiz do seu dataset (a que contém a pasta 'sequences')
-DATASET_ROOT = Path('/kaggle/working/DATASET-SAI/') # SEMPRE ATUALIZAR PARA O CAMINHO DO DATASET
 
 # O ID da "sequência falsa" que você designou para os dados de TREINAMENTO
 TRAIN_SEQUENCE_ID = '00'
@@ -22,8 +20,19 @@ def main():
     no conjunto de treinamento. Classes com menos pontos receberão um peso maior.
     """
     
+    parser = argparse.ArgumentParser(description="Este script calcula os pesos para cada classe com base na sua frequência no conjunto de treinamento.")
+    parser.add_argument(
+        "input_path",
+        type=str,
+        help="Caminho para um único arquivo .label ou para um diretório contendo arquivos .label."
+    )
+    args = parser.parse_args()
+
+    input_path = Path(args.input_path)
+    
+    
     # Monta o caminho para a pasta de rótulos do conjunto de treino
-    labels_dir = DATASET_ROOT / 'sequences' / TRAIN_SEQUENCE_ID / 'labels'
+    labels_dir = input_path / 'sequences' / TRAIN_SEQUENCE_ID / 'labels'
     
     # Encontra todos os arquivos .label na pasta
     label_files = list(labels_dir.glob('*.label'))
