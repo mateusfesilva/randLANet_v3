@@ -1,0 +1,20 @@
+# Ignorar pastas de cache e ambiente virtual do Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Ignorar pastas do Git e do VSCode
+.git/
+.vscode/
+
+# Ignorar pastas de dados grandes que serão montadas com volumes
+dataset/
+data/
+logs/
+
+# Ignorar arquivos
+amplificar_pesos.py
+meudataset_aereo_class_weights BKP.npy

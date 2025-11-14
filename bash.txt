@@ -1,0 +1,5 @@
+python3 train_SemanticKITTI.py --max_epoch 3 --log_dir logs_v1
+
+C:\Users\sai\AppData\Local\Programs\Python\Python311\python.exe -m pip install tensorboard
+
+python3 train_SemanticKITTI.py --help
