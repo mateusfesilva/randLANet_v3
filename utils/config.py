@@ -95,3 +95,5 @@ class ConfigSemantic3D:
     augment_noise = 0.001
     augment_occlusion = 'none'
     augment_color = 0.8
+
+cfg = ConfigSemanticKITTI()
