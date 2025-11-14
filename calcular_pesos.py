@@ -9,7 +9,7 @@ import argparse
 TRAIN_SEQUENCE_ID = '00'
 
 # O número total de classes no seu dataset
-NUM_CLASSES = 3
+NUM_CLASSES = 4
 
 # --- FIM DA CONFIGURAÇÃO ---
 
