@@ -5,7 +5,7 @@ class ConfigSemanticKITTI:
     k_n = 16  # KNN
     num_layers = 4  # Number of layers
     num_points = 4096 * 11  # Number of input points
-    num_classes = 3  # Number of valid classes
+    num_classes = 4  # Number of valid classes
     sub_grid_size = 0.06  # preprocess_parameter
     num_features = 4  # Number of input features (x, y, z, intensity)
 
